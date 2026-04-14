@@ -1,0 +1,61 @@
+{
+  "name": "Yuya",
+  "titles": ["Web App Engineer", "Test Engineer", "LLM Application Engineer"],
+  "tagline": "塵も積もれば山となる",
+  "about": {
+    "description": "ソフトウェアエンジニアとして5年以上の経験を持ち、Webアプリケーション開発からLLMアプリケーション、テストPMOまで幅広く携わる。プライベートではローカルPCを生成AI仕様にカスタマイズし、最新技術のキャッチアップに余念がない。2児の父。",
+    "experience": [
+      {
+        "period": "University",
+        "title": "愛媛大学 工学部 情報工学科",
+        "detail": "ソフトウェアセキュリティを研究テーマに学ぶ"
+      },
+      {
+        "period": "Graduate",
+        "title": "神戸大学大学院",
+        "detail": "起業家精神（アントレプレナーシップ）を専攻しながら、ハードウェアセキュリティの研究に従事"
+      },
+      {
+        "period": "2020 - 2024",
+        "title": "IBM — Application Developer",
+        "detail": "流通・製造・AR/VR・モバイル・金融など多業界で、Webアプリケーション開発およびLLMを活用したソリューション構築に携わる"
+      },
+      {
+        "period": "2024 - Present",
+        "title": "テストエンジニアリング企業",
+        "detail": "テストPMOとしてプロジェクトの品質戦略・プロセス設計をリード"
+      }
+    ]
+  },
+  "skills": {
+    "Frontend": ["Vue.js", "Vuetify", "JavaScript", "TypeScript", "SPA設計"],
+    "Backend": ["Python", "Flask", "REST API設計", "データ処理"],
+    "Infrastructure": ["Docker", "WSL", "Raspberry Pi", "VLAN設計", "Tailscale", "VPN"],
+    "AI / LLM": ["ComfyUI", "LoRA", "Ollama", "GGUF", "MCP Server", "LLMアプリ設計"],
+    "DevOps": ["Git Flow", "CI/CD", "テスト設計", "自動化"]
+  },
+  "projects": [
+    {
+      "name": "Local LLM Environment",
+      "description": "ローカルPC上でOllama/GGUFモデルを活用した生成AI環境を構築。MCPサーバ開発やLoRA生成など、エッジAIの可能性を探求。",
+      "tags": ["Ollama", "GGUF", "MCP", "LoRA"]
+    },
+    {
+      "name": "Home Server Cluster",
+      "description": "Raspberry Piクラスタを活用した自宅サーバ環境。VLAN分離・ゼロトラスト設計でセキュアなネットワークを構築。",
+      "tags": ["Raspberry Pi", "Docker", "VLAN", "Tailscale"]
+    },
+    {
+      "name": "Enterprise Web Applications",
+      "description": "IBMにて流通・金融・製造業界向けのWebアプリケーションを設計・開発。Vue.js + Flask構成でAPI駆動型のシステムを多数構築。",
+      "tags": ["Vue.js", "Flask", "REST API", "TypeScript"]
+    }
+  ],
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/yuya4i",
+      "icon": "github"
+    }
+  ]
+}

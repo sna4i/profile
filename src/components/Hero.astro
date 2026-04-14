@@ -1,0 +1,31 @@
+---
+import profile from '../data/profile.json';
+---
+
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+  <!-- Gradient background orbs -->
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-[#6366F1]/10 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#8B5CF6]/10 rounded-full blur-3xl animate-float-delayed"></div>
+
+  <div class="text-center px-6 z-10 animate-fade-in">
+    <p class="text-sm font-medium tracking-widest text-[#6366F1] uppercase mb-4">Welcome</p>
+    <h1 class="text-6xl md:text-8xl font-bold font-['Inter'] bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent mb-6 pb-2 leading-tight">
+      {profile.name}
+    </h1>
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      {profile.titles.map((title: string) => (
+        <span class="px-4 py-1.5 text-sm font-medium text-[#6366F1] border border-[#6366F1]/30 rounded-full bg-[#6366F1]/5">
+          {title}
+        </span>
+      ))}
+    </div>
+    <p class="text-xl md:text-2xl text-gray-400 font-light tracking-wide">
+      {profile.tagline}
+    </p>
+    <a href="#about" class="inline-block mt-12 animate-bounce-slow">
+      <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+</section>
