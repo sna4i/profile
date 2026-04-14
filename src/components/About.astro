@@ -3,32 +3,28 @@ import profile from '../data/profile.json';
 ---
 
 <section id="about" class="py-24 px-6">
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-3xl mx-auto">
     <h2 class="text-3xl font-bold font-['Inter'] mb-4 animate-on-scroll">About</h2>
     <div class="w-16 h-1 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] rounded-full mb-12 animate-on-scroll"></div>
 
-    <p class="text-lg text-gray-600 leading-relaxed mb-16 animate-on-scroll">
+    <p class="jp-wrap text-lg text-gray-600 leading-relaxed mb-16 animate-on-scroll">
       {profile.about.description}
     </p>
 
     <div class="relative">
-      <!-- Timeline line -->
-      <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#6366F1] to-[#8B5CF6]/20"></div>
-
-      {profile.about.experience.map((exp: { period: string; title: string; detail: string }, i: number) => (
-        <div class={`relative flex flex-col md:flex-row items-start mb-12 animate-on-scroll ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-          <!-- Dot -->
-          <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-[#6366F1] rounded-full -translate-x-1/2 mt-2 ring-4 ring-[#FAFAFA]"></div>
-
-          <div class={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+      <div class="absolute left-[5px] top-3 bottom-3 w-[2px] bg-gradient-to-b from-[#6366F1] to-[#8B5CF6] opacity-40 pointer-events-none" aria-hidden="true"></div>
+      <ol class="space-y-10">
+        {profile.about.experience.map((exp: { period: string; title: string; detail: string }) => (
+          <li class="relative pl-10 animate-on-scroll">
+            <span class="absolute left-0 top-2.5 w-3 h-3 bg-[#6366F1] rounded-full ring-4 ring-[#FAFAFA]" aria-hidden="true"></span>
             <span class="inline-block text-xs font-semibold text-[#8B5CF6] bg-[#8B5CF6]/10 px-3 py-1 rounded-full mb-2">
               {exp.period}
             </span>
-            <h3 class="text-lg font-bold mb-1">{exp.title}</h3>
-            <p class="text-sm text-gray-500">{exp.detail}</p>
-          </div>
-        </div>
-      ))}
+            <h3 class="jp-wrap text-lg font-bold mb-1">{exp.title}</h3>
+            <p class="jp-wrap text-sm text-gray-500 leading-relaxed">{exp.detail}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </div>
 </section>

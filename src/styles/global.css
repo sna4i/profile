@@ -4,6 +4,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Japanese-friendly line breaks: prefer phrase-aware wrapping where available,
+   and forbid breaks in front of small kana / choon-puku (ー) as JIS X 4051 dictates. */
+.jp-wrap {
+  word-break: auto-phrase;
+  line-break: strict;
+  overflow-wrap: normal;
+}
+
 /* Fade-in on page load */
 .animate-fade-in {
   animation: fadeIn 1s ease-out;
