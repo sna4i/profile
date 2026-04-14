@@ -16,10 +16,13 @@ const navItems = [
   { label: profile.ui.sections.links, href: '#links' },
 ];
 
-const altLocale: Locale = locale === 'ja' ? 'en' : 'ja';
-const altHref = altLocale === 'ja' ? `${base}/` : `${base}/en/`;
-const altLabel = altLocale === 'ja' ? '日本語' : 'English';
-const altShort = altLocale.toUpperCase();
+const localeOptions: { locale: Locale; label: string; href: string; aria: string }[] = [
+  { locale: 'ja', label: 'JA', href: `${base}/`, aria: '日本語に切り替え' },
+  { locale: 'en', label: 'EN', href: `${base}/en/`, aria: 'Switch to English' },
+];
+
+const activeClass = 'bg-[#6366F1] text-white';
+const inactiveClass = 'text-[#6366F1] hover:bg-[#6366F1]/10';
 ---
 
 <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#FAFAFA]/80 backdrop-blur-md">
@@ -40,13 +43,18 @@ const altShort = altLocale.toUpperCase();
           </li>
         ))}
       </ul>
-      <a
-        href={altHref}
-        aria-label={`Switch language to ${altLabel}`}
-        class="text-xs font-semibold tracking-widest text-[#6366F1] border border-[#6366F1]/30 rounded-full px-3 py-1 hover:bg-[#6366F1]/5 transition-colors duration-200"
-      >
-        {altShort}
-      </a>
+      <div role="group" aria-label="Language" class="inline-flex items-center border border-[#6366F1]/30 rounded-full overflow-hidden text-xs font-semibold tracking-widest">
+        {localeOptions.map((opt) => (
+          <a
+            href={opt.href}
+            aria-label={opt.aria}
+            aria-current={opt.locale === locale ? 'page' : undefined}
+            class:list={['px-3 py-1 transition-colors duration-200', opt.locale === locale ? activeClass : inactiveClass]}
+          >
+            {opt.label}
+          </a>
+        ))}
+      </div>
     </div>
     <button id="menu-toggle" class="md:hidden p-2 text-gray-500 hover:text-[#6366F1]" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,12 +75,18 @@ const altShort = altLocale.toUpperCase();
         </li>
       ))}
       <li>
-        <a
-          href={altHref}
-          class="inline-block text-xs font-semibold tracking-widest text-[#6366F1] border border-[#6366F1]/30 rounded-full px-3 py-1 hover:bg-[#6366F1]/5 transition-colors duration-200"
-        >
-          {altShort}
-        </a>
+        <div role="group" aria-label="Language" class="inline-flex items-center border border-[#6366F1]/30 rounded-full overflow-hidden text-xs font-semibold tracking-widest">
+          {localeOptions.map((opt) => (
+            <a
+              href={opt.href}
+              aria-label={opt.aria}
+              aria-current={opt.locale === locale ? 'page' : undefined}
+              class:list={['px-3 py-1 transition-colors duration-200', opt.locale === locale ? activeClass : inactiveClass]}
+            >
+              {opt.label}
+            </a>
+          ))}
+        </div>
       </li>
     </ul>
   </div>
