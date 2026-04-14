@@ -6,6 +6,13 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://yuya4i.github.io',
   base: '/profile',
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },

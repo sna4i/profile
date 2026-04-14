@@ -57,5 +57,15 @@
       "url": "https://github.com/yuya4i",
       "icon": "github"
     }
-  ]
+  ],
+  "ui": {
+    "welcome": "Welcome",
+    "sections": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "links": "Links"
+    },
+    "footer": "Built with Astro."
+  }
 }

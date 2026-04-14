@@ -1,29 +1,53 @@
 ---
+import type { Locale, Profile } from '../types';
+
+interface Props {
+  profile: Profile;
+  locale: Locale;
+}
+
+const { profile, locale } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Links', href: '#links' },
+  { label: profile.ui.sections.about, href: '#about' },
+  { label: profile.ui.sections.skills, href: '#skills' },
+  { label: profile.ui.sections.projects, href: '#projects' },
+  { label: profile.ui.sections.links, href: '#links' },
 ];
+
+const altLocale: Locale = locale === 'ja' ? 'en' : 'ja';
+const altHref = altLocale === 'ja' ? `${base}/` : `${base}/en/`;
+const altLabel = altLocale === 'ja' ? '日本語' : 'English';
+const altShort = altLocale.toUpperCase();
 ---
 
 <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#FAFAFA]/80 backdrop-blur-md">
   <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#" class="text-xl font-bold font-['Inter,monospace'] bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">
+    <a href={locale === 'ja' ? `${base}/` : `${base}/en/`} class="text-xl font-bold font-['Inter,monospace'] bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">
       &lt;Y/&gt;
     </a>
-    <ul class="hidden md:flex gap-8">
-      {navItems.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            class="text-sm font-medium text-gray-500 hover:text-[#6366F1] transition-colors duration-200"
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class="hidden md:flex items-center gap-6">
+      <ul class="flex gap-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-sm font-medium text-gray-500 hover:text-[#6366F1] transition-colors duration-200"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a
+        href={altHref}
+        aria-label={`Switch language to ${altLabel}`}
+        class="text-xs font-semibold tracking-widest text-[#6366F1] border border-[#6366F1]/30 rounded-full px-3 py-1 hover:bg-[#6366F1]/5 transition-colors duration-200"
+      >
+        {altShort}
+      </a>
+    </div>
     <button id="menu-toggle" class="md:hidden p-2 text-gray-500 hover:text-[#6366F1]" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -42,6 +66,14 @@ const navItems = [
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href={altHref}
+          class="inline-block text-xs font-semibold tracking-widest text-[#6366F1] border border-[#6366F1]/30 rounded-full px-3 py-1 hover:bg-[#6366F1]/5 transition-colors duration-200"
+        >
+          {altShort}
+        </a>
+      </li>
     </ul>
   </div>
 </header>

@@ -1,22 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import Links from '../components/Links.astro';
-import Footer from '../components/Footer.astro';
-import profile from '../data/profile.ja.json';
-import type { Profile } from '../types';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Skills from '../../components/Skills.astro';
+import Projects from '../../components/Projects.astro';
+import Links from '../../components/Links.astro';
+import Footer from '../../components/Footer.astro';
+import profile from '../../data/profile.en.json';
+import type { Profile } from '../../types';
 
 const typedProfile = profile as Profile;
 const title = `${typedProfile.name} - Profile`;
 const description = `${typedProfile.name} - ${typedProfile.titles.join(' / ')}`;
 ---
 
-<Layout title={title} description={description} locale="ja">
-  <Header profile={typedProfile} locale="ja" />
+<Layout title={title} description={description} locale="en">
+  <Header profile={typedProfile} locale="en" />
   <main>
     <Hero profile={typedProfile} />
     <About profile={typedProfile} />

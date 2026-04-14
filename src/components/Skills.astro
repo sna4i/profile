@@ -1,5 +1,11 @@
 ---
-import profile from '../data/profile.json';
+import type { Profile } from '../types';
+
+interface Props {
+  profile: Profile;
+}
+
+const { profile } = Astro.props;
 
 const categoryIcons: Record<string, string> = {
   'Frontend': '🎨',
@@ -12,7 +18,7 @@ const categoryIcons: Record<string, string> = {
 
 <section id="skills" class="py-24 px-6 bg-[#F0F0F0]/50">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold font-['Inter'] mb-4 animate-on-scroll">Skills</h2>
+    <h2 class="text-3xl font-bold font-['Inter'] mb-4 animate-on-scroll">{profile.ui.sections.skills}</h2>
     <div class="w-16 h-1 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] rounded-full mb-12 animate-on-scroll"></div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -23,8 +29,8 @@ const categoryIcons: Record<string, string> = {
             <h3 class="text-lg font-bold font-['Inter']">{category}</h3>
           </div>
           <div class="flex flex-wrap gap-2">
-            {(skills as string[]).map((skill: string) => (
-              <span class="px-3 py-1 text-sm bg-[#6366F1]/5 text-[#6366F1] rounded-lg border border-[#6366F1]/10 group-hover:border-[#6366F1]/30 transition-colors duration-300">
+            {skills.map((skill: string) => (
+              <span class="jp-wrap px-3 py-1 text-sm bg-[#6366F1]/5 text-[#6366F1] rounded-lg border border-[#6366F1]/10 group-hover:border-[#6366F1]/30 transition-colors duration-300">
                 {skill}
               </span>
             ))}

@@ -1,0 +1,71 @@
+{
+  "name": "Yuya",
+  "titles": ["Web App Engineer", "Test Engineer", "LLM Application Engineer"],
+  "tagline": "Small steps build great heights",
+  "about": {
+    "description": "A software engineer with 5+ years of experience, spanning web application development, LLM applications, and test PMO. Outside work, I customize my local PC for generative-AI workloads and stay hands-on with the latest technology. Father of two.",
+    "experience": [
+      {
+        "period": "University",
+        "title": "Ehime University — Faculty of Engineering, Computer Science",
+        "detail": "Focused on software security as a research topic."
+      },
+      {
+        "period": "Graduate",
+        "title": "Kobe University Graduate School",
+        "detail": "Majored in entrepreneurship while researching hardware security."
+      },
+      {
+        "period": "2020 - 2024",
+        "title": "IBM — Application Developer",
+        "detail": "Built web applications and LLM-powered solutions across retail, manufacturing, AR/VR, mobile, and finance industries."
+      },
+      {
+        "period": "2024 - Present",
+        "title": "Test Engineering Firm",
+        "detail": "Leading quality strategy and process design as a Test PMO."
+      }
+    ]
+  },
+  "skills": {
+    "Frontend": ["Vue.js", "Vuetify", "JavaScript", "TypeScript", "SPA Design"],
+    "Backend": ["Python", "Flask", "REST API Design", "Data Processing"],
+    "Infrastructure": ["Docker", "WSL", "Raspberry Pi", "VLAN Design", "Tailscale", "VPN"],
+    "AI / LLM": ["ComfyUI", "LoRA", "Ollama", "GGUF", "MCP Server", "LLM App Design"],
+    "DevOps": ["Git Flow", "CI/CD", "Test Design", "Automation"]
+  },
+  "projects": [
+    {
+      "name": "Local LLM Environment",
+      "description": "Built a local generative-AI environment using Ollama and GGUF models. Exploring the edge-AI frontier through MCP server development and LoRA training.",
+      "tags": ["Ollama", "GGUF", "MCP", "LoRA"]
+    },
+    {
+      "name": "Home Server Cluster",
+      "description": "Home server environment on a Raspberry Pi cluster. Built a secure network with VLAN segmentation and zero-trust architecture.",
+      "tags": ["Raspberry Pi", "Docker", "VLAN", "Tailscale"]
+    },
+    {
+      "name": "Enterprise Web Applications",
+      "description": "Designed and developed web applications at IBM for retail, finance, and manufacturing industries. Built many API-driven systems with Vue.js + Flask.",
+      "tags": ["Vue.js", "Flask", "REST API", "TypeScript"]
+    }
+  ],
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/yuya4i",
+      "icon": "github"
+    }
+  ],
+  "ui": {
+    "welcome": "Welcome",
+    "sections": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "links": "Links"
+    },
+    "footer": "Built with Astro."
+  }
+}

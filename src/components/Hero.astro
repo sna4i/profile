@@ -1,5 +1,11 @@
 ---
-import profile from '../data/profile.json';
+import type { Profile } from '../types';
+
+interface Props {
+  profile: Profile;
+}
+
+const { profile } = Astro.props;
 ---
 
 <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -8,7 +14,7 @@ import profile from '../data/profile.json';
   <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#8B5CF6]/10 rounded-full blur-3xl animate-float-delayed"></div>
 
   <div class="text-center px-6 z-10 animate-fade-in">
-    <p class="text-sm font-medium tracking-widest text-[#6366F1] uppercase mb-4">Welcome</p>
+    <p class="text-sm font-medium tracking-widest text-[#6366F1] uppercase mb-4">{profile.ui.welcome}</p>
     <h1 class="text-6xl md:text-8xl font-bold font-['Inter'] bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent mb-6 pb-2 leading-tight">
       {profile.name}
     </h1>
@@ -19,7 +25,7 @@ import profile from '../data/profile.json';
         </span>
       ))}
     </div>
-    <p class="text-xl md:text-2xl text-gray-400 font-light tracking-wide">
+    <p class="jp-wrap text-xl md:text-2xl text-gray-400 font-light tracking-wide">
       {profile.tagline}
     </p>
     <a href="#about" class="inline-block mt-12 animate-bounce-slow">
