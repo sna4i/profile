@@ -37,6 +37,32 @@ export interface Profile {
       repo: string;
       live: string;
     };
+    github: GithubLabels;
     footer: string;
   };
+}
+
+export interface LanguageStat {
+  name: string;
+  count: number;
+  percent: number;
+  color: string;
+}
+
+export interface GithubStats {
+  username: string;
+  profileUrl: string;
+  publicRepos: number;
+  memberSinceYear: number;
+  yearsOnGithub: number;
+  languages: LanguageStat[];
+  source: 'live' | 'fallback';
+}
+
+export interface GithubLabels {
+  heading: string;
+  repos: string;
+  years: string;
+  sincePrefix: string;
+  languages: string;
 }

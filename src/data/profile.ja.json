@@ -82,6 +82,13 @@
       "repo": "GitHub",
       "live": "サイト"
     },
+    "github": {
+      "heading": "GitHub Activity",
+      "repos": "リポジトリ",
+      "years": "GitHub歴（年）",
+      "sincePrefix": "登録 ",
+      "languages": "使用言語"
+    },
     "footer": "Built with Astro."
   }
 }

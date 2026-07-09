@@ -82,6 +82,13 @@
       "repo": "GitHub",
       "live": "Visit"
     },
+    "github": {
+      "heading": "GitHub Activity",
+      "repos": "Repositories",
+      "years": "Years on GitHub",
+      "sincePrefix": "since ",
+      "languages": "Top Languages"
+    },
     "footer": "Built with Astro."
   }
 }
