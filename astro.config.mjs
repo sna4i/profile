@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://yuya4i.github.io',
+  site: 'https://sna4i.github.io',
   base: '/profile',
   i18n: {
     defaultLocale: 'ja',

@@ -1,6 +1,6 @@
 # profile
 
-My personal profile site. Live at [yuya4i.github.io/profile](https://yuya4i.github.io/profile/).
+My personal profile site. Live at [sna4i.github.io/profile](https://sna4i.github.io/profile/).
 
 ## Built with
 
