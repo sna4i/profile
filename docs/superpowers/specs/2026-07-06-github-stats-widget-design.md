@@ -1,12 +1,12 @@
 # GitHub Stats Widget — Design Spec
 
 - **Date**: 2026-07-06
-- **Repo**: `yuya4i/profile`
+- **Repo**: `sna4i/profile`
 - **Status**: Approved (design)
 
 ## Overview
 
-Linksセクションの GitHub リンク付近に、`yuya4i` の GitHub 公開統計を表示する自作ウィジェットを追加する。
+Linksセクションの GitHub リンク付近に、`sna4i` の GitHub 公開統計を表示する自作ウィジェットを追加する。
 外部SVGサービス（github-readme-stats等）に依存せず、Astro のビルド時に GitHub REST API から取得したデータを、
 サイトの配色（indigo→purple）に合わせて自前で描画する。外部サービス非依存・完全自己完結・デザイン統一を満たす。
 
@@ -29,7 +29,7 @@ star/fork が 0 のため、rank を star 重み付けで大きく表示する g
 
 | ID | 要件 |
 |---|---|
-| F-001 | ビルド時に GitHub REST API（無認証）から `yuya4i` の統計を取得する |
+| F-001 | ビルド時に GitHub REST API（無認証）から `sna4i` の統計を取得する |
 | F-002 | Public Repos 数を大きな数字タイルで表示する |
 | F-003 | GitHub歴（`created_at` からの年数）を数字タイル＋"since 2016" 補足で表示する |
 | F-004 | 使用言語をリポジトリ主要言語カウントで集計し、積み上げ横バー＋凡例で表示する |
@@ -44,7 +44,7 @@ star/fork が 0 のため、rank を star 重み付けで大きく表示する g
 
 ```
 index.astro (ja) ─┐
-                  ├─ getGithubStats('yuya4i')      ← ビルド時 fetch（1〜2回）
+                  ├─ getGithubStats('sna4i')      ← ビルド時 fetch（1〜2回）
 en/index.astro ───┘        │  try: api.github.com  →  catch: src/data/github-stats.json
                            ▼
         <GithubStats stats={GithubStats} labels={profile.ui.github} locale={Locale} />
@@ -75,8 +75,8 @@ export interface LanguageStat {
 }
 
 export interface GithubStats {
-  username: string;      // "yuya4i"
-  profileUrl: string;    // "https://github.com/yuya4i"
+  username: string;      // "sna4i"
+  profileUrl: string;    // "https://github.com/sna4i"
   publicRepos: number;   // 11
   memberSinceYear: number; // 2016
   yearsOnGithub: number;   // build 時点で算出（現在年 - 2016）
@@ -109,7 +109,7 @@ export interface GithubLabels {
 
 ```json
 {
-  "username": "yuya4i",
+  "username": "sna4i",
   "publicRepos": 11,
   "memberSinceYear": 2016,
   "languages": [
@@ -191,4 +191,4 @@ export interface GithubLabels {
 - コントリビューション数・草（contribution graph）・streak（GraphQL＋token が必要）
 - Stars / Forks / Followers 表示
 - 週次 cron 自動リビルド
-- 複数ユーザー対応（`yuya4i` 固定でよい、ただし関数引数化はする）
+- 複数ユーザー対応（`sna4i` 固定でよい、ただし関数引数化はする）
