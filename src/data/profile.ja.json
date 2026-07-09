@@ -49,6 +49,18 @@
       "name": "Enterprise Web Applications",
       "description": "IBMにて流通・金融・製造業界向けのWebアプリケーションを設計・開発。Vue.js + Flask構成でAPI駆動型のシステムを多数構築。",
       "tags": ["Vue.js", "Flask", "REST API", "TypeScript"]
+    },
+    {
+      "name": "ixis",
+      "description": "モバイル向けパズルゲーム（iOS / Android）。",
+      "tags": ["iOS", "Android", "AdMob"],
+      "liveUrl": "https://sna4i.github.io/ixis/support/"
+    },
+    {
+      "name": "pii-masking",
+      "description": "個人情報(PII)を検出・マスキングするツール。",
+      "tags": ["JavaScript", "PII"],
+      "repoUrl": "https://github.com/sna4i/pii-masking"
     }
   ],
   "links": [
@@ -65,6 +77,10 @@
       "skills": "Skills",
       "projects": "Projects",
       "links": "Links"
+    },
+    "projectLinks": {
+      "repo": "GitHub",
+      "live": "サイト"
     },
     "footer": "Built with Astro."
   }

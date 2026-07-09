@@ -49,6 +49,18 @@
       "name": "Enterprise Web Applications",
       "description": "Designed and developed web applications at IBM for retail, finance, and manufacturing industries. Built many API-driven systems with Vue.js + Flask.",
       "tags": ["Vue.js", "Flask", "REST API", "TypeScript"]
+    },
+    {
+      "name": "ixis",
+      "description": "A mobile puzzle game for iOS and Android.",
+      "tags": ["iOS", "Android", "AdMob"],
+      "liveUrl": "https://sna4i.github.io/ixis/support/"
+    },
+    {
+      "name": "pii-masking",
+      "description": "A tool that detects and masks personally identifiable information (PII).",
+      "tags": ["JavaScript", "PII"],
+      "repoUrl": "https://github.com/sna4i/pii-masking"
     }
   ],
   "links": [
@@ -65,6 +77,10 @@
       "skills": "Skills",
       "projects": "Projects",
       "links": "Links"
+    },
+    "projectLinks": {
+      "repo": "GitHub",
+      "live": "Visit"
     },
     "footer": "Built with Astro."
   }
