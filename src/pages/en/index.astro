@@ -9,10 +9,12 @@ import Links from '../../components/Links.astro';
 import Footer from '../../components/Footer.astro';
 import profile from '../../data/profile.en.json';
 import type { Profile } from '../../types';
+import { getGithubStats } from '../../lib/github';
 
 const typedProfile = profile as Profile;
 const title = `${typedProfile.name} - Profile`;
 const description = `${typedProfile.name} - ${typedProfile.titles.join(' / ')}`;
+const githubStats = await getGithubStats('sna4i');
 ---
 
 <Layout title={title} description={description} locale="en">
@@ -22,7 +24,7 @@ const description = `${typedProfile.name} - ${typedProfile.titles.join(' / ')}`;
     <About profile={typedProfile} />
     <Skills profile={typedProfile} />
     <Projects profile={typedProfile} />
-    <Links profile={typedProfile} />
+    <Links profile={typedProfile} githubStats={githubStats} />
   </main>
   <Footer profile={typedProfile} />
 </Layout>

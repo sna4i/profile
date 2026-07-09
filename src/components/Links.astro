@@ -1,11 +1,13 @@
 ---
-import type { Profile } from '../types';
+import type { GithubStats, Profile } from '../types';
+import GithubStatsCard from './GithubStats.astro';
 
 interface Props {
   profile: Profile;
+  githubStats: GithubStats;
 }
 
-const { profile } = Astro.props;
+const { profile, githubStats } = Astro.props;
 ---
 
 <section id="links" class="py-24 px-6 bg-[#F0F0F0]/50">
@@ -40,5 +42,7 @@ const { profile } = Astro.props;
         </a>
       ))}
     </div>
+
+    <GithubStatsCard stats={githubStats} labels={profile.ui.github} />
   </div>
 </section>
