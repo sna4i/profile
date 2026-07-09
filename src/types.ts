@@ -17,6 +17,8 @@ export interface Profile {
     name: string;
     description: string;
     tags: string[];
+    repoUrl?: string;
+    liveUrl?: string;
   }[];
   links: {
     name: string;
@@ -30,6 +32,10 @@ export interface Profile {
       skills: string;
       projects: string;
       links: string;
+    };
+    projectLinks: {
+      repo: string;
+      live: string;
     };
     footer: string;
   };
