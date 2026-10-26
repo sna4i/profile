@@ -3,7 +3,7 @@
 ## Overview
 
 GitHub Pages でホスティングするプロフィール＋ポートフォリオサイト。
-リポジトリ: `yuya4i/yuya` / カスタムドメインで公開。
+リポジトリ: `sna4i/profile` / カスタムドメインで公開。
 
 ## Site Structure
 
@@ -58,7 +58,7 @@ GitHub Pages でホスティングするプロフィール＋ポートフォリ�
 ## Project Structure
 
 ```
-yuya/
+profile/
 ├── src/
 │   ├── components/    # Hero, About, Skills, Projects, Links
 │   ├── layouts/       # Base layout
